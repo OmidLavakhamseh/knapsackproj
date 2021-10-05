@@ -1,15 +1,12 @@
-#'Brute force algorithm for the knapsack problem
-#'
-#'@param x is a data.frame containing variables 'w' and 'v', weights and values
-#'@param W is the total size of the knapsack
-#'@details This algorithm gives all possbile values with good accuracy , and also gives the maximum value for the knapsack
-#'@author Omid Lavakhamseh, Hamed Godazgar
-#'@references
-#'\url{https://en.wikipedia.org/wiki/Knapsack_problem}
-#'@seealso
-#'\code{\link{Brute Force Knapsack}}
-#'@title Brute force search
-#'@description  function knapsack_brute_force(x, W) that takes a data.frame cx with two variables v and w and returns the maximum knapsack value and which elements
+#' Brute force algorithm for the knapsack problem
+#' @param x is a data.frame containing variables 'w' and 'v', weights and values
+#' @param W is the total size of the knapsack
+#' @details This algorithm gives all possible values with good accuracy , and also gives the maximum value for the knapsack
+#' @seealso
+#' \code{\link{knapsack_dynamic}}
+#' \code{\link{greedy_knapsack}}
+
+
 brute_force_knapsack <- function(x, W){
   stopifnot( is.data.frame(x),
              is.numeric(W),

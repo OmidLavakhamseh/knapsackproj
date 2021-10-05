@@ -2,7 +2,6 @@
 #' @param x data.frame, contains variables weight(w) and value(v)
 #' @param W weight threshold for the knapsack
 #' @return Total v and position of w's for that value
-#' \url{https://en.wikipedia.org/wiki/Knapsack_problem#0.2F1%20knapsack%20problem}
 #' @seealso
 #' \code{\link{brute_force_knapsack}}
 #' \code{\link{knapsack_dynamic}}

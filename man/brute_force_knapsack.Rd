@@ -2,7 +2,7 @@
 % Please edit documentation in R/brute_force_knapsack.R
 \name{brute_force_knapsack}
 \alias{brute_force_knapsack}
-\title{Brute force search}
+\title{Brute force algorithm for the knapsack problem}
 \usage{
 brute_force_knapsack(x, W)
 }
@@ -12,19 +12,12 @@ brute_force_knapsack(x, W)
 \item{W}{is the total size of the knapsack}
 }
 \description{
-function knapsack_brute_force(x, W) that takes a data.frame cx with two variables v and w and returns the maximum knapsack value and which elements
+Brute force algorithm for the knapsack problem
 }
 \details{
-Brute force algorithm for the knapsack problem
-
-This algorithm gives all possbile values with good accuracy , and also gives the maximum value for the knapsack
-}
-\references{
-\url{https://en.wikipedia.org/wiki/Knapsack_problem}
+This algorithm gives all possible values with good accuracy , and also gives the maximum value for the knapsack
 }
 \seealso{
-\code{\link{Brute Force Knapsack}}
-}
-\author{
-Omid Lavakhamseh, Hamed Godazgar
+\code{\link{knapsack_dynamic}}
+\code{\link{greedy_knapsack}}
 }
