@@ -42,6 +42,7 @@ brute_force_knapsack <- function(x, W){
     i=i+1
     
   }
+  devtools::install(build_vignettes = TRUE)
   
   return(list(value=round(optimum_value),elements=selected_items))
 }
