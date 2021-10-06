@@ -18,6 +18,7 @@ The [Knapsack Problem](https://en.wikipedia.org/wiki/Knapsack_problem)  is a wel
 
 ```{r setup}
 library(knapsack)
+devtools::install(build_vignettes = TRUE)
 ```
 # Package Solutions
 ## Function implementing a Brute-Force Solution (without Parallelisation)
