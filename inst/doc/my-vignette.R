@@ -1,13 +1,13 @@
-## ---- include = FALSE---------------------------------------------------------
+## ---- include = FALSE----------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 
-## ----setup--------------------------------------------------------------------
+## ----setup---------------------------------------------------------
 library(knapsack)
 
-## ---- eval=F------------------------------------------------------------------
+## ---- eval=F-------------------------------------------------------
 #  # Function to get time
 #  set.seed(42, kind = "Mersenne-Twister", normal.kind = "Inversion")
 #  n <-16
@@ -22,7 +22,7 @@ library(knapsack)
 #  # Function to get mean execution time
 #  mean(unlist(lapply(c(10,100,500,1000,1500,2000,3000,4000), FUN = get_time)))
 
-## ---- eval=F------------------------------------------------------------------
+## ---- eval=F-------------------------------------------------------
 #  # Data Object
 #  set.seed(42, kind = "Mersenne-Twister", normal.kind = "Inversion")
 #  n <-500
@@ -40,7 +40,7 @@ library(knapsack)
 #  # Function to get mean execution time
 #  mean(unlist(lapply(c(100,500,1000,1500,2000,3000,4000,5000), FUN = get_time)))
 
-## ---- eval=F------------------------------------------------------------------
+## ---- eval=F-------------------------------------------------------
 #  # Data Object
 #  set.seed(42, kind = "Mersenne-Twister", normal.kind = "Inversion")
 #  n <-1000000
