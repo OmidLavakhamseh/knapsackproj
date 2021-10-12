@@ -2,22 +2,24 @@
 % Please edit documentation in R/greedy_heuristic.r
 \name{greedy_knapsack}
 \alias{greedy_knapsack}
-\title{Implements Greedy ALgorithm for knapsack problem}
+\title{Implements Greedy approach for knapsack problem}
+\source{
+https://en.wikipedia.org/wiki/Knapsack_problem#Greedy_approximation_algorithm
+}
 \usage{
 greedy_knapsack(x, W)
 }
 \arguments{
-\item{x}{data.frame, contains variables weight(w) and value(v)}
+\item{x}{data.frame,with a weight w and a value v}
 
-\item{W}{weight threshold for the knapsack}
+\item{W}{Knapsack capacity}
 }
 \value{
-Total v and position of w's for that value
+Maximum knapsack value and which elements (row in x)
 }
 \description{
-Implements Greedy ALgorithm for knapsack problem
+a greedy approximation algorithm which solves the unbounded knapsack problem
 }
-\seealso{
-\code{\link{brute_force_knapsack}}
-\code{\link{knapsack_dynamic}}
+\details{
+This algorithm will not give an exact result,it will reduce the computational complexity considerably
 }

@@ -1,10 +1,11 @@
-#' Implements Greedy ALgorithm for knapsack problem
-#' @param x data.frame, contains variables weight(w) and value(v)
-#' @param W weight threshold for the knapsack
-#' @return Total v and position of w's for that value
-#' @seealso
-#' \code{\link{brute_force_knapsack}}
-#' \code{\link{knapsack_dynamic}}
+#' Implements Greedy approach for knapsack problem
+#' @param x data.frame,with a weight w and a value v
+#' @param W Knapsack capacity
+#' @description a greedy approximation algorithm which solves the unbounded knapsack problem
+#' @return Maximum knapsack value and which elements (row in x)
+#' @details This algorithm will not give an exact result,it will reduce the computational complexity considerably
+#' @source  https://en.wikipedia.org/wiki/Knapsack_problem#Greedy_approximation_algorithm
+#' @export 
 
 
 
