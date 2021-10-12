@@ -1,49 +1,47 @@
 #' Brute force algorithm for the knapsack problem
-#' @param x is a data.frame containing variables 'w' and 'v', weights and values
-#' @param W is the total size of the knapsack
-#' @details This algorithm gives all possible values with good accuracy , and also gives the maximum value for the knapsack
-#' @seealso
-#' \code{\link{knapsack_dynamic}}
-#' \code{\link{greedy_knapsack}}
-
+#' @param x data.frame,with a weight w and a value v
+#' @param W Knapsack capacity
+#' @description takes a data.frame cx with two variables v and w and returns the maximum knapsack value and which elements (rows in the data.frame)
+#' @return Maximum knapsack value and which elements (row in x)
+#' @details takes a data.frame cx with two variables v and w and returns the maximum knapsack value and which elements (rows in the data.frame)
+#' @source  https://en.wikipedia.org/wiki/Knapsack_problem#Greedy_approximation_algorithm
+#' @export 
+#' @importFrom utils combn
 
 brute_force_knapsack <- function(x, W){
-  stopifnot( is.data.frame(x),
-             is.numeric(W),
-             W>0,
-             is.numeric(x$w),
-             is.numeric(x$v),
-             x$w >=0,
-             x$v >= 0)
-  i=2
-  optimum_value = 0     
-  selected_items = c()
-  weights<-c()
-  values<-c()
-  while(i<=nrow(x))
+  if (is.data.frame(x) == FALSE & is.numeric(W) == FALSE){
+    stop()
+  }
+  if(W<=0){
+    stop()
+  }
+  i = 2
+  max_value = 0     
+  element <- c()
+  wei <- c()
+  values <- c()
+  while(i <= nrow(x))
   {
-    w<-as.data.frame(combn(x[,1], i))
-    v<-as.data.frame(combn(x[,2], i))
-    sumw<-colSums(w)
-    sumv<-colSums(v)
-    weights<-which(sumw<=W)
-    if(length(weights) != 0){ 
-      values<-sumv[weights]
-      optimum_value<-max(values)
-      temp<-which((values)==optimum_value)
-      maxValWghtIdx<-weights[temp]
-      maxValWght<-w[, maxValWghtIdx]
-      j<-1
-      while (j<=i){
-        selected_items[j]<-which(x[,1]==maxValWght[j])
-        j=j+1
+    w <- as.data.frame(combn(x[,1], i))
+    v <- as.data.frame(combn(x[,2], i))
+    sum_w <- colSums(w)
+    sum_v <- colSums(v)
+    wei <- which(sum_w <= W)
+    if(length(wei) != 0){ 
+      values <- sum_v[wei]
+      max_value <- max(values)
+      val <- which((values) == max_value)
+      index_weight <- wei[val]
+      max_weight <- w[,index_weight]
+      j <- 1
+      while (j <= i){
+        element[j] <- which(x[,1] == max_weight[j])
+        j = j+1
       }
     }
-    i=i+1
+    i = i+1
     
   }
   
-  return(list(value=round(optimum_value),elements=selected_items))
+  return(list(value = round(max_value),elements = element))
 }
-
-

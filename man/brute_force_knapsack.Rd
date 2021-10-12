@@ -3,21 +3,23 @@
 \name{brute_force_knapsack}
 \alias{brute_force_knapsack}
 \title{Brute force algorithm for the knapsack problem}
+\source{
+https://en.wikipedia.org/wiki/Knapsack_problem#Greedy_approximation_algorithm
+}
 \usage{
 brute_force_knapsack(x, W)
 }
 \arguments{
-\item{x}{is a data.frame containing variables 'w' and 'v', weights and values}
+\item{x}{data.frame,with a weight w and a value v}
 
-\item{W}{is the total size of the knapsack}
+\item{W}{Knapsack capacity}
+}
+\value{
+Maximum knapsack value and which elements (row in x)
 }
 \description{
-Brute force algorithm for the knapsack problem
+takes a data.frame cx with two variables v and w and returns the maximum knapsack value and which elements (rows in the data.frame)
 }
 \details{
-This algorithm gives all possible values with good accuracy , and also gives the maximum value for the knapsack
-}
-\seealso{
-\code{\link{knapsack_dynamic}}
-\code{\link{greedy_knapsack}}
+takes a data.frame cx with two variables v and w and returns the maximum knapsack value and which elements (rows in the data.frame)
 }

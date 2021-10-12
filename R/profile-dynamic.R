@@ -10,8 +10,8 @@ x <-
 
 W <- 2000
 
-profvis::profvis({brute_force_knapsack(x, W)})
+
 
 profvis::profvis({knapsack_dynamic(x, W)})
 
-profvis::profvis({greedy_knapsack(x, W)})
+
