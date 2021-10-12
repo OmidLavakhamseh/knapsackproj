@@ -1,4 +1,3 @@
-
 context("Dynamic_programming")
 
 suppressWarnings(RNGversion(min(as.character(getRversion()),"3.5.3")))
@@ -10,10 +9,9 @@ knapsack_objects <- data.frame(
 )
 
 test_that("Correct object is returned", {
-  expect_silent(bfk <- knapsack_dynamic(x = knapsack_objects[1:8,], W = 3500))
-  expect_named(bfk, c("value", "elements"))
+  expect_silent(kd <- knapsack_dynamic(x = knapsack_objects[1:8,], W = 3500))
+  expect_named(kd, c("value", "elements"))
 })
-
 
 test_that("functions rejects errounous input.", {
   expect_error(knapsack_dynamic("hej", 3500))
@@ -21,22 +19,22 @@ test_that("functions rejects errounous input.", {
 })
 
 test_that("Function return correct results.", {
-  bfk <- knapsack_dynamic(x = knapsack_objects[1:8,], W = 3500)
-  expect_equal(round(bfk$value), 16770)
-  expect_true(all(round(bfk$elements) %in% c(5, 8)))
+  kd <- knapsack_dynamic(x = knapsack_objects[1:8,], W = 3500)
+  expect_equal(round(kd$value), 16770)
+  expect_true(all(round(kd$elements) %in% c(5, 8)))
   
-  bfk <- knapsack_dynamic(x = knapsack_objects[1:12,], W = 3500)
-  expect_equal(round(bfk$value), 16770)
-  expect_true(all(round(bfk$elements) %in% c(5, 8)))
+  kd <- knapsack_dynamic(x = knapsack_objects[1:12,], W = 3500)
+  expect_equal(round(kd$value), 16770)
+  expect_true(all(round(kd$elements) %in% c(5, 8)))
   
-  bfk <- knapsack_dynamic(x = knapsack_objects[1:8,], W = 2000)
-  expect_equal(round(bfk$value), 15428)
-  expect_true(all(round(bfk$elements) %in% c(3, 8)))
+  kd <- knapsack_dynamic(x = knapsack_objects[1:8,], W = 2000)
+  expect_equal(round(kd$value), 15428)
+  expect_true(all(round(kd$elements) %in% c(3, 8)))
   
-  bfk <- knapsack_dynamic(x = knapsack_objects[1:12,], W = 2000)
-  expect_equal(round(bfk$value), 15428)
-  expect_true(all(round(bfk$elements) %in% c(3, 8)))
+  kd <- knapsack_dynamic(x = knapsack_objects[1:12,], W = 2000)
+  expect_equal(round(kd$value), 15428)
+  expect_true(all(round(kd$elements) %in% c(3, 8)))
   
-  st <- system.time(bfk <- knapsack_dynamic(x = knapsack_objects[1:16,], W = 2000))
+  st <- system.time(kd <- knapsack_dynamic(x = knapsack_objects[1:16,], W = 2000))
   expect_true(as.numeric(st)[2] >= 0.00)
 })

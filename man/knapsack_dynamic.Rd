@@ -2,22 +2,18 @@
 % Please edit documentation in R/Dynamic_programming.R
 \name{knapsack_dynamic}
 \alias{knapsack_dynamic}
-\title{Dynamic Implementation of Knapsack Algorithm}
+\title{Implements Dynamic programming for knapsack problem}
 \usage{
 knapsack_dynamic(x, W)
 }
 \arguments{
 \item{x}{data.frame, contains variables weight(w) and value(v)}
 
-\item{W}{weight threshold for the knapsack}
+\item{W}{Knapsack capacity}
 }
 \value{
-Total and Maximum value within the threshold of W
+Total and Maximum value within the max capacity
 }
 \description{
-Dynamic Implementation of Knapsack Algorithm
-}
-\seealso{
-\code{\link{brute_force_knapsack}}
-\code{\link{greedy_knapsack}}
+Implements Dynamic programming for knapsack problem
 }

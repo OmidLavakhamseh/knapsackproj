@@ -9,9 +9,11 @@
 
 
 greedy_knapsack <- function(x, W){
+  i=1
   c1=c()
   c=c()
-  if (inherits(x,"data.frame")==FALSE){
+  
+  if (is.data.frame(x) == FALSE & is.numeric(W) == FALSE){
     stop()
   }
   if(W<=0){
@@ -23,7 +25,7 @@ greedy_knapsack <- function(x, W){
   x$OI= 1:numrow
   vd=vd1 = 0
   x=x[order(vrat, decreasing=TRUE),]
-  i=1
+
   while((v1<W)|(v1==W)){
     v=v1
     vd=vd1
